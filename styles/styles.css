@@ -1,12 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 p {
   color: #6666ff;
-  font-size: 2em;
+  font-family: sans-serif;
+  font-size: 1em;
 }
 h1 {
   color: #6666ff;
+  font-family: sans-serif;
   font-size: 1em;
 }
