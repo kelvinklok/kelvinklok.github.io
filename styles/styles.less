@@ -10,6 +10,8 @@
 //////////////////////////////
 // variables
 //////////////////////////////
+@gridunit: 8px;
+
 @color1: #6666ff;
 
 @fontfamilyprimary: sans-serif;
@@ -56,12 +58,13 @@ h2 {
 }
 
 html {
-  .border(10px, solid, @color1);
+  .border(@gridunit, solid, @color1);
   width: 100%;
   height: 100%;
 }
 
 body {
-  max-width: 1200px;
+  max-width: @gridunit * 150;
   .center();
+  padding: @gridunit;
 }

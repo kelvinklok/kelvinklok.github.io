@@ -18,7 +18,7 @@ h2 {
   font-size: 2em;
 }
 html {
-  border-width: 10px;
+  border-width: 8px;
   border-style: solid;
   border-color: #6666ff;
   box-sizing: border-box;
@@ -28,4 +28,5 @@ html {
 body {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 8px;
 }
