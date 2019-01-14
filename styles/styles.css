@@ -19,5 +19,8 @@ h2 {
 }
 body {
   max-width: 1200px;
-  margin: auto 0;
+  margin: 0 auto;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #6666ff;
 }
