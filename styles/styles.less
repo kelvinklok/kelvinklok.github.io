@@ -1,16 +1,9 @@
 //////////////////////////////
-// global
-//////////////////////////////
-
 // reset
+//////////////////////////////
 * {
   margin: 0;
   padding: 0;
-}
-
-// alignment
-.center() {
-  margin: auto 0;
 }
 
 
@@ -29,10 +22,10 @@
 //////////////////////////////
 // text styles
 //////////////////////////////
-.font(@color, @fontfamily, @fontsize) {
+.font(@color, @family, @size) {
   color: @color;
-  font-family: @fontfamily;
-  font-size: @fontsize;
+  font-family: @family;
+  font-size: @size;
 }
 
 p {
@@ -51,7 +44,18 @@ h2 {
 //////////////////////////////
 // page layout
 //////////////////////////////
+.center() {
+  margin: 0 auto;
+}
+
+.border(@width, @style, @color) {
+  border-width: @width;
+  border-style: @style;
+  border-color: @color;
+}
+
 body {
   max-width: 1200px;
   .center();
+  .border(10px solid @color1);
 }
