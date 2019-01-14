@@ -7,20 +7,28 @@
 // variables
 @color1: #6666ff;
 
-@fontfamily: sans-serif;
+@fontfamilyprimary: sans-serif;
 
 @fontsizebody: 1em;
-@fontsizeheader: 3em;
+@fontsizeheader: 2em;
+@fontsizetitle: 3em;
+
+// mixins
+.font(@color, @fontfamily, @fontsize) {
+  color: @color;
+  font-family: @fontfamily;
+  font-size: @fontsize;
+}
 
 // styles
 p {
-  color: @color1;
-  font-family: @fontfamily;
-  font-size: @fontsizebody;
+  .font(@color1, @fontfamilyprimary, @fontsizebody);
 }
 
 h1 {
-  color: @color1;
-  font-family: @fontfamily;
-  font-size: @fontsizeheader;
+  .font(@color1, @fontfamilyprimary, @fontsizetitle);
+}
+
+h2 {
+  .font(@color1, @fontfamilyprimary, @fontsizeheader);
 }
