@@ -1,18 +1,11 @@
 //////////////////////////////
-// reset
-//////////////////////////////
-* {
-  margin: 0;
-  padding: 0;
-}
-
-
-//////////////////////////////
 // variables
 //////////////////////////////
 @gridunit: 8px;
 
-@color1: #6666ff;
+@color0: transparent;
+@color1: #ffdd00;
+@color2: #332200;
 
 @fontfamilyprimary: sans-serif;
 
@@ -31,15 +24,15 @@
 }
 
 p {
-  .font(@color1, @fontfamilyprimary, @fontsizebody);
+  .font(@color2, @fontfamilyprimary, @fontsizebody);
 }
 
 h1 {
-  .font(@color1, @fontfamilyprimary, @fontsizetitle);
+  .font(@color2, @fontfamilyprimary, @fontsizetitle);
 }
 
 h2 {
-  .font(@color1, @fontfamilyprimary, @fontsizeheader);
+  .font(@color2, @fontfamilyprimary, @fontsizeheader);
 }
 
 
@@ -61,10 +54,25 @@ html {
   .border(@gridunit, solid, @color1);
   width: 100%;
   height: 100%;
+  background-color: #f4f4f4;
 }
 
 html body {
   max-width: @gridunit * 150;
   .center();
   padding: @gridunit;
+}
+
+//////////////////////////////
+// objects
+//////////////////////////////
+.image(@url, @width, @height) {
+  background-image: url(@url);
+  width: @width * @gridunit;
+  height: @height * @gridunit;
+  background-repeat: no-repeat;
+}
+
+#logo {
+  .image("/assets/logo-k.svg", 15, 15);
 }
