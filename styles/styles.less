@@ -23,6 +23,10 @@
   font-size: @size;
 }
 
+a {
+  .font(@color2, @fontfamilyprimary, @fontsizebody);
+}
+
 p {
   .font(@color2, @fontfamilyprimary, @fontsizebody);
 }
@@ -43,6 +47,11 @@ h2 {
   margin: 0 auto;
 }
 
+.right() {
+  float: right;
+  text-align: right;
+}
+
 .border(@width, @style, @color) {
   border-width: @width;
   border-style: @style;
@@ -58,9 +67,29 @@ html {
 }
 
 html body {
-  max-width: @gridunit * 150;
+
+}
+
+.header {
+  margin: @gridunit * 3;
+}
+
+.menu {
+  .right();
+}
+
+.menu a {
+  margin-left: @gridunit * 2;
+}
+
+.content {
+  max-width: @gridunit * 60;
   .center();
   padding: @gridunit;
+}
+
+svg {
+  stroke: transparent;
 }
 
 //////////////////////////////
@@ -74,5 +103,5 @@ html body {
 }
 
 #logo {
-  .image("/assets/logo-k.svg", 15, 15);
+  .image("../assets/logo-k.svg", 15, 15);
 }
