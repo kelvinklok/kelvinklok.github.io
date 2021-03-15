@@ -2,24 +2,34 @@ svg {
   stroke: transparent;
 }
 a {
-  color: #332200;
-  font-family: sans-serif;
-  font-size: 1em;
+  color: #1d1d1d;
+  font-family: 'Source Serif Pro', 'georgia', 'times new roman', serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  border-bottom: 0.125em solid #ffd000;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  border-width: 0.25em;
 }
 p {
-  color: #332200;
-  font-family: sans-serif;
-  font-size: 1em;
+  color: #1d1d1d;
+  font-family: 'Source Serif Pro', 'georgia', 'times new roman', serif;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 h1 {
-  color: #332200;
-  font-family: sans-serif;
-  font-size: 3em;
+  color: #1d1d1d;
+  font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
+  font-size: 2.6em;
+  font-weight: 400;
 }
 h2 {
-  color: #332200;
-  font-family: sans-serif;
+  color: #1d1d1d;
+  font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
   font-size: 2em;
+  font-weight: 700;
 }
 #fancy-border-top,
 #fancy-border-right,
@@ -32,7 +42,7 @@ html {
 }
 body,
 header,
-.content,
+section,
 footer {
   padding: 0.5em;
 }
@@ -40,12 +50,10 @@ body {
   max-width: 50em;
   margin: 0 auto;
 }
-header {
-  margin: 1.5em;
-}
 .menu {
   float: right;
   text-align: right;
+  padding-left: 0;
 }
 .menu li {
   display: inline-block;
@@ -53,7 +61,7 @@ header {
 .menu a {
   margin-left: 1em;
 }
-.content {
+section {
   max-width: 40em;
   margin: 0 auto;
   padding: 0.5em;
@@ -66,6 +74,7 @@ header {
   width: 5em;
   height: 5em;
   background-repeat: no-repeat;
+  display: inline-block;
 }
 @media screen and (min-width: 520px) {
   body {
@@ -73,7 +82,7 @@ header {
     padding: 4em;
   }
   body header,
-  body .content,
+  body section,
   body footer {
     padding: 1em;
   }
@@ -81,7 +90,7 @@ header {
   #fancy-border-right,
   #fancy-border-bottom,
   #fancy-border-left {
-    background-color: #ffdd00;
+    background-color: #ffd000;
     position: fixed;
     display: block;
   }

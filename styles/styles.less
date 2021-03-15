@@ -3,15 +3,20 @@
 //////////////////////////////
 @gridunit: .5em;
 
-@color0: transparent;
-@color1: #ffdd00;
-@color2: #332200;
+@color-transparent: transparent;
+@color-background: #f4f4f4;
+@color-1: #ffd000;
+@color-2: #1d1d1d;
+@color-3: #ffd000;
 
-@fontfamilyprimary: sans-serif;
+@fontfamilydisplay: 'Source Sans Pro', helvetica, arial, sans-serif;
+@fontfamilybody: 'Source Serif Pro', 'georgia', 'times new roman', serif;
 
-@fontsizebody: 1em;
+@fontsizetitle: 2.6em;
 @fontsizeheader: 2em;
-@fontsizetitle: 3em;
+@fontsizebody: 1.2em;
+
+@fancyborderwidth: @gridunit * 6;
 
 //////////////////////////////
 // mixins
@@ -32,10 +37,11 @@
   box-sizing: border-box;
 }
 
-.font(@color, @family, @size) {
+.font(@color, @family, @size, @weight) {
   color: @color;
   font-family: @family;
   font-size: @size;
+  font-weight: @weight;
 }
 
 .image(@url, @width, @height) {
@@ -56,19 +62,25 @@ svg {
 // text styles
 //////////////////////////////
 a {
-  .font(@color2, @fontfamilyprimary, @fontsizebody);
+  .font(@color-2, @fontfamilybody, @fontsizebody, 400);
+  border-bottom: @gridunit * .25 solid @color-1;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  border-width: @gridunit * .5;
 }
 
 p {
-  .font(@color2, @fontfamilyprimary, @fontsizebody);
+  .font(@color-2, @fontfamilybody, @fontsizebody, 400);
 }
 
 h1 {
-  .font(@color2, @fontfamilyprimary, @fontsizetitle);
+  .font(@color-2, @fontfamilydisplay, @fontsizetitle, 400);
 }
 
 h2 {
-  .font(@color2, @fontfamilyprimary, @fontsizeheader);
+  .font(@color-2, @fontfamilydisplay, @fontsizeheader, 700);
 }
 
 //////////////////////////////
@@ -81,10 +93,10 @@ h2 {
 }
 
 html {
-  background-color: #f4f4f4;
+  background-color: @color-background;
 }
 
-body, header, .content, footer {
+body, header, section, footer {
   padding: @gridunit * 1;
 }
 
@@ -93,12 +105,9 @@ body {
   .center();
 }
 
-header {
-  margin: @gridunit * 3;
-}
-
 .menu {
   .justify-right();
+  padding-left: 0; // Where does this come from?
 }
 
 .menu li {
@@ -109,7 +118,7 @@ header {
   margin-left: @gridunit * 2;
 }
 
-.content {
+section {
   max-width: @gridunit * 80;
   .center();
   padding: @gridunit;
@@ -124,24 +133,25 @@ header {
 //////////////////////////////
 #logo {
   .image("../assets/logo-k.svg", @gridunit * 10, @gridunit * 10);
+  display: inline-block;
 }
-
-@media screen and (min-width: 520px) {
-  body {
-    width: 80%;
-    padding: @gridunit * 8;
-    header, .content, footer {
-      padding: @gridunit * 2;
-    }
-  }
 
 //////////////////////////////
 // Media Queries
 //////////////////////////////
 
+@media screen and (min-width: 520px) {
+  body {
+    width: 80%;
+    padding: @fancyborderwidth + @gridunit * 2;
+    header, section, footer {
+      padding: @gridunit * 2;
+    }
+  }
+
   // fancy border
   #fancy-border-top, #fancy-border-right, #fancy-border-bottom, #fancy-border-left {
-    background-color: @color1;
+    background-color: @color-1;
     position: fixed;
     display: block;
   }
@@ -149,13 +159,13 @@ header {
   #fancy-border-left, #fancy-border-right {
     top: 0;
     bottom: 0;
-    width: @gridunit * 6;
+    width: @fancyborderwidth;
   }
 
   #fancy-border-top, #fancy-border-bottom {
     left: 0;
     right: 0;
-    height: @gridunit * 6;
+    height: @fancyborderwidth;
   }
 
   #fancy-border-top {
