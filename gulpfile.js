@@ -15,7 +15,7 @@ gulp.task('lesscompile', function(cb){
 });
 
 gulp.task('fileinclude', function(cb){
-  gulp.src(['./dev/index.html'])
+  gulp.src(['./dev/*.html'])
   .pipe(fileinclude({
     prefix: '@@',
     basepath: '@file',
