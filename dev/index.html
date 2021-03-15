@@ -7,12 +7,7 @@
   </head>
   <body>
     <header>
-      <a href="./index.html"><div id="logo"></div></a>
-      <ul class="menu">
-        <li><a href="#"><strike>Portfolio</strike></a></li>
-        <li><a href="#"><strike>Writing</strike></a></li>
-        <li><a href="#"><strike>Résumé</strike></a></li>
-      </ul>
+      @@include('./header.html')
     </header>
     <section class="intro">
       <h1>Kelvin Lok. Designer. Manager.</h1>
@@ -30,16 +25,8 @@
       <p>🚧 <b>Note: </b>This website and portfolio is under construction.</p>
     </section>
     <footer>
-      <ul class="menu">
-        <li><a href="mailto:hello.kelvin.lok@gmail.com" target="_blank">Email</a></li>
-        <li><a href="https://www.linkedin.com/in/kelvinklok/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.behance.net/loknessMonstrousity/" target="_blank">Bēhance</a></li>
-      </ul>
-      <p id="copyright">Design & Content © 2021 Kelvin Lok</p>
+      @@include('./footer.html')
     </footer>
-    <div id="fancy-border-top"></div>
-    <div id="fancy-border-right"></div>
-    <div id="fancy-border-bottom"></div>
-    <div id="fancy-border-left"></div>
+    @@include('./border.html')
   </body>
 </html>
