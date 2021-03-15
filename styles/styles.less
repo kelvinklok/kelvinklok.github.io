@@ -1,7 +1,7 @@
 //////////////////////////////
 // variables
 //////////////////////////////
-@gridunit: 8px;
+@gridunit: .5em;
 
 @color0: transparent;
 @color1: #ffdd00;
@@ -13,16 +13,48 @@
 @fontsizeheader: 2em;
 @fontsizetitle: 3em;
 
+//////////////////////////////
+// mixins
+//////////////////////////////
+.center() {
+  margin: 0 auto;
+}
 
-//////////////////////////////
-// text styles
-//////////////////////////////
+.justify-right() {
+  float: right;
+  text-align: right;
+}
+
+.border(@width, @style, @color) {
+  border-width: @width;
+  border-style: @style;
+  border-color: @color;
+  box-sizing: border-box;
+}
+
 .font(@color, @family, @size) {
   color: @color;
   font-family: @family;
   font-size: @size;
 }
 
+.image(@url, @width, @height) {
+  background-image: url(@url);
+  width: @width;
+  height: @height;
+  background-repeat: no-repeat;
+}
+
+//////////////////////////////
+// reset
+//////////////////////////////
+svg {
+  stroke: transparent;
+}
+
+//////////////////////////////
+// text styles
+//////////////////////////////
 a {
   .font(@color2, @fontfamilyprimary, @fontsizebody);
 }
@@ -39,43 +71,38 @@ h2 {
   .font(@color2, @fontfamilyprimary, @fontsizeheader);
 }
 
-
 //////////////////////////////
 // page layout
 //////////////////////////////
-.center() {
-  margin: 0 auto;
-}
 
-.right() {
-  float: right;
-  text-align: right;
-}
-
-.border(@width, @style, @color) {
-  border-width: @width;
-  border-style: @style;
-  border-color: @color;
-  box-sizing: border-box;
+// fancy border
+#fancy-border-top, #fancy-border-right, #fancy-border-bottom, #fancy-border-left {
+  display: none;
 }
 
 html {
-  .border(@gridunit, solid, @color1);
-  width: 100%;
-  height: 100%;
   background-color: #f4f4f4;
 }
 
-html body {
-
+body, header, .content, footer {
+  padding: @gridunit * 1;
 }
 
-.header {
+body {
+  max-width: @gridunit * 100;
+  .center();
+}
+
+header {
   margin: @gridunit * 3;
 }
 
 .menu {
-  .right();
+  .justify-right();
+}
+
+.menu li {
+  display: inline-block;
 }
 
 .menu a {
@@ -83,25 +110,67 @@ html body {
 }
 
 .content {
-  max-width: @gridunit * 60;
+  max-width: @gridunit * 80;
   .center();
   padding: @gridunit;
 }
 
-svg {
-  stroke: transparent;
+#copyright {
+  font-style: italic;
 }
 
 //////////////////////////////
 // objects
 //////////////////////////////
-.image(@url, @width, @height) {
-  background-image: url(@url);
-  width: @width * @gridunit;
-  height: @height * @gridunit;
-  background-repeat: no-repeat;
+#logo {
+  .image("../assets/logo-k.svg", @gridunit * 10, @gridunit * 10);
 }
 
-#logo {
-  .image("../assets/logo-k.svg", 15, 15);
+@media screen and (min-width: 520px) {
+  body {
+    width: 80%;
+    padding: @gridunit * 8;
+    header, .content, footer {
+      padding: @gridunit * 2;
+    }
+  }
+
+//////////////////////////////
+// Media Queries
+//////////////////////////////
+
+  // fancy border
+  #fancy-border-top, #fancy-border-right, #fancy-border-bottom, #fancy-border-left {
+    background-color: @color1;
+    position: fixed;
+    display: block;
+  }
+
+  #fancy-border-left, #fancy-border-right {
+    top: 0;
+    bottom: 0;
+    width: @gridunit * 6;
+  }
+
+  #fancy-border-top, #fancy-border-bottom {
+    left: 0;
+    right: 0;
+    height: @gridunit * 6;
+  }
+
+  #fancy-border-top {
+    top: 0;
+  }
+
+  #fancy-border-right {
+    right: 0;
+  }
+
+  #fancy-border-bottom {
+    bottom: 0;
+  }
+
+  #fancy-border-left {
+    left:0
+  }
 }
