@@ -1,15 +1,27 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     git = require('gulp-git'),
     less = require('gulp-less'),
+    fileinclude = require('gulp-file-include'),
     watch = require('gulp-watch');
 var path = require('path');
 
 gulp.task('lesscompile', function(cb){
-  return gulp.src('styles/*.less')
+  return gulp.src('./dev/styles/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest('styles')),
+    .pipe(gulp.dest('./styles')),
+  cb();
+});
+
+gulp.task('fileinclude', function(cb){
+  gulp.src(['./dev/index.html'])
+  .pipe(fileinclude({
+    prefix: '@@',
+    basepath: '@file',
+    indent: 'true'
+  }))
+  .pipe(gulp.dest('./')),
   cb();
 });
 
@@ -27,11 +39,11 @@ gulp.task('push', function(cb){
   cb();
 });
 
-gulp.task('default', gulp.series('lesscompile'), function(cb){
+gulp.task('default', gulp.series('lesscompile', 'fileinclude'), function(cb){
   cb();
 });
 
 gulp.task('buildmode', function(cb){
-  gulp.watch('styles/*.less', gulp.series('lesscompile'));
+  gulp.watch(['./dev/styles/*.less', './dev/*.html'], gulp.series('default'));
   cb();
 });
