@@ -1,7 +1,9 @@
 svg {
   stroke: transparent;
 }
-* {
+p,
+ul,
+ol {
   color: #1d1d1d;
   font-family: 'Source Serif Pro', 'georgia', 'times new roman', serif;
   font-size: 1.2rem;
