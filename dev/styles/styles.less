@@ -1,7 +1,7 @@
 //////////////////////////////
 // variables
 //////////////////////////////
-@gridunit: .5em;
+@gridunit: .5rem;
 
 @color-transparent: transparent;
 @color-background: #f4f4f4;
@@ -12,9 +12,9 @@
 @fontfamilydisplay: 'Source Sans Pro', helvetica, arial, sans-serif;
 @fontfamilybody: 'Source Serif Pro', 'georgia', 'times new roman', serif;
 
-@fontsizetitle: 2.6em;
-@fontsizeheader: 2em;
-@fontsizebody: 1.2em;
+@fontsizetitle: 2.6rem;
+@fontsizeheader: 2rem;
+@fontsizebody: 1.2rem;
 
 @fancyborderwidth: @gridunit * 6;
 
@@ -61,8 +61,13 @@ svg {
 //////////////////////////////
 // text styles
 //////////////////////////////
+
+* {
+  .font(@color-2, @fontfamilybody, @fontsizebody, 400); // default paragraph font
+}
+
 a {
-  .font(@color-2, @fontfamilybody, @fontsizebody, 400);
+  .font(@color-2, inherit, inherit, inherit);
   border-bottom: @gridunit * .25 solid @color-1;
   text-decoration: none;
 }
@@ -71,16 +76,16 @@ a:hover, a:active {
   border-width: @gridunit * .5;
 }
 
-p {
-  .font(@color-2, @fontfamilybody, @fontsizebody, 400);
-}
-
 h1 {
   .font(@color-2, @fontfamilydisplay, @fontsizetitle, 400);
 }
 
 h2 {
-  .font(@color-2, @fontfamilydisplay, @fontsizeheader, 700);
+  .font(@color-2, @fontfamilydisplay, @fontsizeheader, 400);
+}
+
+ul, ol {
+  line-height: 2rem;
 }
 
 ::selection {
@@ -100,7 +105,6 @@ body, header, section, footer {
 }
 
 body {
-  max-width: @gridunit * 100;
   .center();
 }
 
@@ -118,7 +122,6 @@ body {
 }
 
 section {
-  max-width: @gridunit * 80;
   .center();
   padding: @gridunit;
 }
@@ -176,6 +179,16 @@ body {
   padding-top: @fancyborderwidth / 3 + @gridunit * 2;
 }
 
+// embedded resume
+.resume {
+  max-width: @gridunit * 160;
+  text-align: center;
+}
+
+.resume object {
+  height: 60vh;
+}
+
 //////////////////////////////
 // Media Queries
 //////////////////////////////
@@ -183,9 +196,14 @@ body {
 @media screen and (min-width: 520px) {
   body {
     width: 80%;
+    max-width: @gridunit * 200;
     header, section, footer {
       padding: @gridunit * 2;
     }
+  }
+
+  section {
+    max-width: @gridunit * 80;
   }
 
   // fancy border

@@ -44,6 +44,6 @@ gulp.task('default', gulp.series('lesscompile', 'fileinclude'), function(cb){
 });
 
 gulp.task('buildmode', function(cb){
-  gulp.watch(['./dev/styles/*.less', './dev/*.html'], gulp.series('default'));
+  gulp.watch(['./dev/styles/*.less', './dev/*.html', './dev/html/*.html'], gulp.series('default'));
   cb();
 });

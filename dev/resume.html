@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    @@include('./html/head.html', {
+      "pagetitle": "Kelvin. Résumé."
+    })
+  </head>
+  <body>
+    <header>
+      @@include('./html/header.html')
+    </header>
+    <section class="resume">
+        <h2><a href="./assets/resume_kelvinklok.pdf">Download Résumé</a></h2>
+        <object data="./assets/resume_kelvinklok.pdf#/page=1" type="application/pdf" width="100%" height="100%">
+          <p>This is where you would see a PDF but it appears your browser is missing a PDF plugin. Please download the resume to view. </p>
+        </object>
+    </section>
+    <footer>
+      @@include('./html/footer.html')
+    </footer>
+    @@include('./html/border.html')
+  </body>
+</html>

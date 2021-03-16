@@ -1,35 +1,39 @@
 svg {
   stroke: transparent;
 }
-a {
+* {
   color: #1d1d1d;
   font-family: 'Source Serif Pro', 'georgia', 'times new roman', serif;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 400;
-  border-bottom: 0.125em solid #ffd000;
+}
+a {
+  color: #1d1d1d;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border-bottom: 0.125rem solid #ffd000;
   text-decoration: none;
 }
 a:hover,
 a:active {
-  border-width: 0.25em;
-}
-p {
-  color: #1d1d1d;
-  font-family: 'Source Serif Pro', 'georgia', 'times new roman', serif;
-  font-size: 1.2em;
-  font-weight: 400;
+  border-width: 0.25rem;
 }
 h1 {
   color: #1d1d1d;
   font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
-  font-size: 2.6em;
+  font-size: 2.6rem;
   font-weight: 400;
 }
 h2 {
   color: #1d1d1d;
   font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 400;
+}
+ul,
+ol {
+  line-height: 2rem;
 }
 ::selection {
   background: rgba(255, 208, 0, 0.6);
@@ -41,10 +45,9 @@ body,
 header,
 section,
 footer {
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 body {
-  max-width: 50em;
   margin: 0 auto;
 }
 .menu {
@@ -56,20 +59,19 @@ body {
   display: inline-block;
 }
 .menu a {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 section {
-  max-width: 40em;
   margin: 0 auto;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 #copyright {
   font-style: italic;
 }
 #logo {
   background-image: url("../assets/logo-k.svg");
-  width: 5em;
-  height: 5em;
+  width: 5rem;
+  height: 5rem;
   background-repeat: no-repeat;
   display: inline-block;
 }
@@ -97,7 +99,7 @@ section {
 }
 #fancy-border-top {
   top: 0;
-  height: 1em;
+  height: 1rem;
 }
 #fancy-border-right {
   right: 0;
@@ -109,16 +111,27 @@ section {
   left: 0;
 }
 body {
-  padding-top: 2em;
+  padding-top: 2rem;
+}
+.resume {
+  max-width: 80rem;
+  text-align: center;
+}
+.resume object {
+  height: 60vh;
 }
 @media screen and (min-width: 520px) {
   body {
     width: 80%;
+    max-width: 100rem;
   }
   body header,
   body section,
   body footer {
-    padding: 1em;
+    padding: 1rem;
+  }
+  section {
+    max-width: 40rem;
   }
   #fancy-border-right,
   #fancy-border-bottom,
@@ -127,13 +140,13 @@ body {
   }
   #fancy-border-left,
   #fancy-border-right {
-    width: 3em;
+    width: 3rem;
   }
   #fancy-border-top,
   #fancy-border-bottom {
-    height: 3em;
+    height: 3rem;
   }
   body {
-    padding: 4em;
+    padding: 4rem;
   }
 }
