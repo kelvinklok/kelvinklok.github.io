@@ -12,7 +12,8 @@ ol {
   font-size: 1.2rem;
   font-weight: 400;
 }
-a {
+a:link,
+a:visited {
   color: #000000;
   font-family: inherit;
   font-size: inherit;
@@ -54,8 +55,12 @@ h6 {
 strike {
   opacity: 40%;
 }
+.highlight {
+  background-color: rgba(0, 255, 208, 0.4);
+  padding: 0.125rem;
+}
 html {
-  background-color: #f4f4f4;
+  background-color: #ebeae6;
 }
 body,
 header,
@@ -90,11 +95,6 @@ section {
   height: 5rem;
   background-repeat: no-repeat;
   display: inline-block;
-}
-.highlight {
-  background-color: rgba(0, 255, 208, 0.4);
-  display: inline-block;
-  padding: 0.25rem;
 }
 .callout {
   background-color: rgba(255, 208, 0, 0.4);
@@ -146,7 +146,7 @@ body {
 .resume object {
   height: 60vh;
 }
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 520px) and (min-height: 520px) {
   body {
     width: 80%;
     max-width: 100rem;

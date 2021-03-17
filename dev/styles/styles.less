@@ -18,7 +18,7 @@ svg {
 
 // increment colors 20%
 @color-transparent: transparent;
-@color-background: #f4f4f4;
+@color-background: #ebeae6;
 @color-1: #ffd000; //ffd000
 @color-2: #000000; //1d1d1d
 @color-3: #00ffd0; //00d0ff
@@ -74,7 +74,7 @@ p, ul, ol {
   .font(@color-2, @fontfamilybody, @fontsizebody, 400); // default paragraph font
 }
 
-a {
+a:link, a:visited {
   .font(@color-2, inherit, inherit, inherit);
   border-bottom: @gridunit * .25 solid @color-1;
   text-decoration: none;
@@ -108,6 +108,12 @@ h3, h4, h5, h6 {
 
 strike {
   opacity: 40%;
+}
+
+.highlight {
+  background-color: fade(@color-3, 40%);
+  // display: inline-block;
+  padding: @gridunit * .25;
 }
 
 //////////////////////////////
@@ -155,12 +161,6 @@ section {
 #logo {
   .image("../assets/logo-k.svg", @gridunit * 10, @gridunit * 10);
   display: inline-block;
-}
-
-.highlight {
-  background-color: fade(@color-3, 40%);
-  display: inline-block;
-  padding: @gridunit * .5;
 }
 
 .callout {
@@ -224,7 +224,7 @@ body {
 // Media Queries
 //////////////////////////////
 
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 520px) and (min-height: 520px) {
   body {
     width: 80%;
     max-width: @gridunit * 200;
