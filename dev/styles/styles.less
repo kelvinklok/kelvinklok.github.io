@@ -12,11 +12,12 @@ svg {
 
 @gridunit: .5rem;
 
+// increment colors 20%
 @color-transparent: transparent;
 @color-background: #f4f4f4;
-@color-1: #ffd000;
+@color-1: #ffd000; //ffd000
 @color-2: #1d1d1d;
-@color-3: #ffd000;
+@color-3: #00d0ff;
 
 @fontfamilydisplay: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 @fontfamilybody: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
@@ -87,6 +88,10 @@ h2 {
   .font(@color-2, @fontfamilydisplay, @fontsizeheader, 400);
 }
 
+h3, h4, h5, h6 {
+  .font(@color-2, @fontfamilydisplay, @fontsizebody, 700);
+}
+
 ul, ol {
   line-height: 2rem;
 }
@@ -140,6 +145,18 @@ section {
 #logo {
   .image("../assets/logo-k.svg", @gridunit * 10, @gridunit * 10);
   display: inline-block;
+}
+
+.highlight {
+  background-color: fade(@color-3, 40%);
+  display: inline-block;
+  padding: @gridunit * .5;
+}
+
+.callout {
+  background-color: fade(@color-1, 40%);
+  display: inline-block;
+  padding: @gridunit * .5;
 }
 
 // fancy border
