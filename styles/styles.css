@@ -37,13 +37,18 @@ h2 {
   font-size: 2rem;
   font-weight: 400;
 }
-h3,
+h3 {
+  color: #000000;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
 h4,
 h5,
 h6 {
   color: #000000;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 figcaption,
@@ -120,6 +125,7 @@ section {
 }
 .project figure img {
   width: 100%;
+  max-width: ;
 }
 .project figure figcaption {
   margin: 0 auto;
