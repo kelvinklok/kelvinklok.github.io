@@ -26,12 +26,13 @@ svg {
 @fontfamilydisplay: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 @fontfamilybody: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 
-@fontsizetitle: 2.5rem;
-@fontsizeheader: 2rem;
+@fontsizeheader: 2.5rem;
+@fontsizetitle: 2rem;
+@fontsizesubtitle: 1.35rem;
 @fontsizebody: 1.2rem;
 @fontsizecaption: 1rem;
 
-@fancyborderwidth: @gridunit * 6;
+@fancyborderwidth: @gridunit * 3;
 
 //////////////////////////////
 // mixins
@@ -86,18 +87,18 @@ a:hover, a:active {
 }
 
 h1 {
-  .font(@color-2, @fontfamilydisplay, @fontsizetitle, 400);
-}
-
-h2 {
   .font(@color-2, @fontfamilydisplay, @fontsizeheader, 400);
 }
 
-h3, h4, h5, h6 {
-  .font(@color-2, @fontfamilydisplay, @fontsizebody, 700);
+h2 {
+  .font(@color-2, @fontfamilydisplay, @fontsizetitle, 400);
 }
 
-figcaption, img {
+h3, h4, h5, h6 {
+  .font(@color-2, @fontfamilydisplay, @fontsizesubtitle, 700);
+}
+
+figcaption, img, .authorship-info {
   .font(@color-2, @fontfamilybody, @fontsizecaption, 400);
   font-style: italic;
 }
@@ -117,6 +118,10 @@ strike {
 .highlight {
   background-color: fade(@color-3, 40%);
   padding: @gridunit * .25;
+}
+
+.authorship-info {
+  text-align: right;
 }
 
 //////////////////////////////
@@ -184,7 +189,7 @@ section {
     margin: 0 auto;
     width: -moz-fit-content;
     width: fit-content;
-    background-color: fade(@color-3, 20%);
+    background-color: fade(@color-1, 20%);
     padding: @gridunit * .25;
   }
 }
