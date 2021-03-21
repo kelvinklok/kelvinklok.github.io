@@ -46,6 +46,14 @@ h6 {
   font-size: 1.2rem;
   font-weight: 700;
 }
+figcaption,
+img {
+  color: #000000;
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+}
 .menu li {
   line-height: 2rem;
 }
@@ -100,6 +108,21 @@ section {
   background-color: rgba(255, 208, 0, 0.4);
   display: inline-block;
   padding: 0.25rem;
+}
+.project figure img,
+.project figure figcaption {
+  display: block;
+  text-align: center;
+}
+.project figure img {
+  width: 100%;
+}
+.project figure figcaption {
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(0, 255, 208, 0.2);
+  padding: 0.125rem;
 }
 #fancy-border-top,
 #fancy-border-right,
@@ -174,5 +197,11 @@ body {
   }
   body {
     padding: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .project figure {
+    width: 140%;
+    margin-left: -20%;
   }
 }

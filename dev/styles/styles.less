@@ -29,6 +29,7 @@ svg {
 @fontsizetitle: 2.5rem;
 @fontsizeheader: 2rem;
 @fontsizebody: 1.2rem;
+@fontsizecaption: 1rem;
 
 @fancyborderwidth: @gridunit * 6;
 
@@ -96,10 +97,13 @@ h3, h4, h5, h6 {
   .font(@color-2, @fontfamilydisplay, @fontsizebody, 700);
 }
 
-.menu {
-  li {
+figcaption, img {
+  .font(@color-2, @fontfamilybody, @fontsizecaption, 400);
+  font-style: italic;
+}
+
+.menu li {
   line-height: 2rem;
-  }
 }
 
 ::selection {
@@ -112,7 +116,6 @@ strike {
 
 .highlight {
   background-color: fade(@color-3, 40%);
-  // display: inline-block;
   padding: @gridunit * .25;
 }
 
@@ -167,6 +170,23 @@ section {
   background-color: fade(@color-1, 40%);
   display: inline-block;
   padding: @gridunit * .5;
+}
+
+.project figure {
+  img, figcaption {
+    display: block;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+  }
+  figcaption {
+    margin: 0 auto;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: fade(@color-3, 20%);
+    padding: @gridunit * .25;
+  }
 }
 
 // fancy border
@@ -251,5 +271,13 @@ body {
 
   body {
     padding: @fancyborderwidth + @gridunit * 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  // TODO: Streamline this with css grid and modals
+  .project figure {
+    width: 140%;
+    margin-left: -20%;
   }
 }
