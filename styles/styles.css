@@ -118,47 +118,61 @@ section {
   display: inline-block;
   padding: 0.25rem;
 }
-#project-list a .card {
-  background-color: #ffffff;
-  padding: 0.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 0.5rem solid #ffd000;
-}
-#project-list a .card h3 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-#project-list a:last-child .card {
-  margin-bottom: 0;
-}
-#project-list a:hover .card {
-  background-color: rgba(255, 208, 0, 0.4);
-}
-#project-list a:active .card {
-  background-color: #ffd000;
-}
-#project figure,
-#project-list figure {
+figure {
   margin: 0;
 }
-#project figure img,
-#project-list figure img,
-#project figure figcaption,
-#project-list figure figcaption {
+figure img,
+figure figcaption {
   display: block;
   text-align: center;
 }
-#project figure img,
-#project-list figure img {
+figure img {
   width: 100%;
 }
-#project figure figcaption,
-#project-list figure figcaption {
+figure figcaption {
   margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(255, 208, 0, 0.2);
   padding: 0.125rem;
+}
+a .card {
+  background-color: #ffffff;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 0.5rem solid #ffd000;
+}
+a .card h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+a:last-child .card {
+  margin-bottom: 0;
+}
+a:hover .card {
+  background-color: rgba(255, 208, 0, 0.4);
+}
+a:active .card {
+  background-color: #ffd000;
+}
+a.button {
+  background-color: #ffffff;
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  width: 15rem;
+  margin: 0 auto;
+  border: 0.5rem solid #ffd000;
+}
+a.button h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+a:hover.button {
+  background-color: rgba(255, 208, 0, 0.4);
+}
+a:active.button {
+  background-color: #ffd000;
 }
 #fancy-border-top,
 #fancy-border-right,
@@ -236,19 +250,19 @@ body {
   }
 }
 @media screen and (min-width: 600px) {
-  #project-list a .card {
+  a .card {
     display: flex;
   }
-  #project-list .card .card-title,
-  #project-list figure {
+  .card .card-title,
+  .card figure {
     display: flex;
     flex-direction: column;
   }
-  #project-list .card .card-title {
+  .card .card-title {
     margin-right: 1rem;
     flex-basis: 66%;
   }
-  #project-list figure {
+  .card figure {
     flex-basis: 34%;
   }
 }

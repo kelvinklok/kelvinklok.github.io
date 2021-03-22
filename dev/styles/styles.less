@@ -182,8 +182,30 @@ section {
   padding: @gridunit * .5;
 }
 
+// image
+figure {
+  margin: 0;
+
+  img, figcaption {
+    display: block;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+  
+  figcaption {
+    margin: 0 auto;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: fade(@color-1, 20%);
+    padding: @gridunit * .25;
+  }
+}
+
 // card
-#project-list a .card {
+a .card {
   background-color: @color-card;
   padding: @gridunit;
   margin-bottom: @gridunit * 3;
@@ -195,39 +217,41 @@ section {
   }
 }
 
-#project-list a:last-child .card {
+a:last-child .card {
   margin-bottom: 0;
 }
 
-#project-list a:hover .card {
+a:hover .card {
   background-color: fade(@color-1, 40%);
 }
 
-#project-list a:active .card {
+a:active .card {
   background-color: @color-1;
 }
 
-#project, #project-list {
-  figure {
-    margin: 0;
+// button
+a.button {
+  background-color: @color-card;
+  display: block;
+  padding: @gridunit;
+  text-align: center;
+  width: @gridunit * 30;
+  margin: 0 auto;
+  border: @gridunit solid @color-1;
+  // border-bottom: none;
 
-    img, figcaption {
-      display: block;
-      text-align: center;
-    }
-
-    img {
-      width: 100%;
-    }
-    
-    figcaption {
-      margin: 0 auto;
-      width: -moz-fit-content;
-      width: fit-content;
-      background-color: fade(@color-1, 20%);
-      padding: @gridunit * .25;
-    }
+  h3 {
+    margin-top: @gridunit;
+    margin-bottom: @gridunit;
   }
+}
+
+a:hover.button {
+  background-color: fade(@color-1, 40%);
+}
+
+a:active.button {
+  background-color: @color-1;
 }
 
 // fancy border
@@ -317,22 +341,22 @@ body {
 
 @media screen and (min-width: 600px) {
   //card
-  #project-list a .card {
+  a .card {
     display: flex;
   }
 
-  #project-list .card .card-title,
-  #project-list figure {
+  .card .card-title,
+  .card figure {
     display: flex;
     flex-direction: column;
   }
 
-  #project-list .card .card-title {
+  .card .card-title {
     margin-right: @gridunit * 2;
     flex-basis: 66%;
   }
 
-  #project-list figure {
+  .card figure {
     flex-basis: 34%;
   }
 }
