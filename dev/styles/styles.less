@@ -10,6 +10,21 @@ svg {
   stroke: transparent;
 }
 
+// material icons
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+
 //////////////////////////////
 // variables
 //////////////////////////////
@@ -232,17 +247,16 @@ a:active .card {
 // button
 a.button {
   background-color: @color-card;
-  display: block;
+  display: flex; // to align button icon
   padding: @gridunit;
-  text-align: center;
-  width: @gridunit * 30;
+  max-width: @gridunit * 30;
   margin: 0 auto;
   border: @gridunit solid @color-1;
-  // border-bottom: none;
 
   h3 {
     margin-top: @gridunit;
     margin-bottom: @gridunit;
+    width: 100%;
   }
 }
 
@@ -252,6 +266,14 @@ a:hover.button {
 
 a:active.button {
   background-color: @color-1;
+}
+
+// button icon
+.button-icon.material-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 // fancy border

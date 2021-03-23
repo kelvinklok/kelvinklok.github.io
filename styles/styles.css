@@ -4,6 +4,18 @@ html {
 svg {
   stroke: transparent;
 }
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
 p,
 ul,
 ol {
@@ -157,22 +169,28 @@ a:active .card {
 }
 a.button {
   background-color: #ffffff;
-  display: block;
+  display: flex;
   padding: 0.5rem;
-  text-align: center;
-  width: 15rem;
+  max-width: 15rem;
   margin: 0 auto;
   border: 0.5rem solid #ffd000;
 }
 a.button h3 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 a:hover.button {
   background-color: rgba(255, 208, 0, 0.4);
 }
 a:active.button {
   background-color: #ffd000;
+}
+.button-icon.material-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 #fancy-border-top,
 #fancy-border-right,
