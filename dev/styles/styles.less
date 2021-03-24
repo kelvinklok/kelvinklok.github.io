@@ -42,7 +42,7 @@ svg {
 @fontfamilydisplay: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 @fontfamilybody: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
 
-@fontsizeheader: 2.5rem;
+@fontsizeheader: 2.35rem;
 @fontsizetitle: 2rem;
 @fontsizesubtitle: 1.35rem;
 @fontsizebody: 1.2rem;
@@ -179,6 +179,10 @@ section {
   :last-child {
     margin-bottom: 0;
   }
+
+  section {
+    margin: @gridunit * 2;
+  }
 }
 
 #copyright {
@@ -204,8 +208,8 @@ section {
 }
 
 .flag {
-  border-left: @color-2 @gridunit solid;
-  margin-left: -@gridunit;
+  border-left: fade(@color-2, 20%) @gridunit solid;
+  margin-left: (@gridunit * 2) - @gridunit;
 }
 
 // image
@@ -352,7 +356,7 @@ body {
   }
 
   section {
-    max-width: @gridunit * 80;
+    max-width: @gridunit * 88;
   }
 
   // fancy border
