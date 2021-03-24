@@ -135,11 +135,6 @@ strike {
   opacity: 40%;
 }
 
-.highlight {
-  background-color: fade(@color-3, 40%);
-  padding: @gridunit * .25;
-}
-
 #authorship-info {
   text-align: right;
 }
@@ -176,6 +171,14 @@ body {
 section {
   .center();
   padding: @gridunit;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
 }
 
 #copyright {
@@ -193,8 +196,16 @@ section {
 
 .callout {
   background-color: fade(@color-1, 40%);
-  display: inline-block;
-  padding: @gridunit * .5;
+}
+
+.highlight {
+  background-color: fade(@color-3, 40%);
+  padding: @gridunit * .25;
+}
+
+.flag {
+  border-left: @color-2 @gridunit solid;
+  margin-left: -@gridunit;
 }
 
 // image
