@@ -3,6 +3,7 @@
 //////////////////////////////
 
 html {
+  .font(@color-text, @fontfamilybody, 1em, 400);
   line-height: 1.3; // normalize is set to 1.15
 }
 
@@ -35,9 +36,9 @@ svg {
 @color-transparent: transparent;
 @color-background: #ebeae6;
 @color-card: #ffffff;
-@color-1: #ffd000; //ffd000
-@color-2: #000000; //1d1d1d
-@color-3: #00ffd0; //00d0ff
+@color-primary: #ffd000; //ffd000
+@color-text: #000000; //1d1d1d
+@color-accent: #00ffd0; //00d0ff
 
 @fontfamilydisplay: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 @fontfamilybody: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
@@ -89,12 +90,12 @@ svg {
 //////////////////////////////
 
 p, ul, ol {
-  .font(@color-2, @fontfamilybody, @fontsizebody, 400); // default paragraph font
+  .font(@color-text, @fontfamilybody, @fontsizebody, 400);
 }
 
 a:link, a:visited {
-  .font(@color-2, inherit, inherit, inherit);
-  border-bottom: @gridunit * .25 solid @color-1;
+  .font(@color-text, inherit, inherit, inherit);
+  border-bottom: @gridunit * .25 solid @color-primary;
   text-decoration: none;
 }
 
@@ -103,32 +104,28 @@ a:hover, a:active {
 }
 
 h1 {
-  .font(@color-2, @fontfamilydisplay, @fontsizeheader, 400);
+  .font(@color-text, @fontfamilydisplay, @fontsizeheader, 400);
 }
 
 h2 {
-  .font(@color-2, @fontfamilydisplay, @fontsizetitle, 400);
+  .font(@color-text, @fontfamilydisplay, @fontsizetitle, 400);
 }
 
 h3 {
-  .font(@color-2, @fontfamilydisplay, @fontsizesubtitle, 700);
+  .font(@color-text, @fontfamilydisplay, @fontsizesubtitle, 700);
 }
 
 h4, h5, h6 {
-  .font(@color-2, @fontfamilydisplay, @fontsizebody, 700);
+  .font(@color-text, @fontfamilydisplay, @fontsizebody, 700);
 }
 
 img, figcaption, #authorship-info {
-  .font(@color-2, @fontfamilybody, @fontsizecaption, 400);
+  .font(@color-text, @fontfamilybody, @fontsizecaption, 400);
   font-style: italic;
 }
 
-.menu li {
-  line-height: 2rem;
-}
-
 ::selection {
-  background: fade(@color-1, 60%);
+  background: fade(@color-primary, 60%);
 }
 
 strike {
@@ -137,6 +134,16 @@ strike {
 
 #authorship-info {
   text-align: right;
+}
+
+// List styles
+
+ol li ol li {
+  list-style-type: lower-alpha;
+}
+
+ol li ol li ol li {
+  list-style-type: lower-roman;
 }
 
 //////////////////////////////
@@ -162,6 +169,7 @@ body {
 
 .menu li {
   display: inline-block;
+  line-height: 2rem;
 }
 
 .menu a {
@@ -199,16 +207,16 @@ section {
 }
 
 .callout {
-  background-color: fade(@color-1, 40%);
+  background-color: fade(@color-primary, 40%);
 }
 
 .highlight {
-  background-color: fade(@color-3, 40%);
+  background-color: fade(@color-accent, 40%);
   padding: @gridunit * .25;
 }
 
 .flag {
-  border-left: fade(@color-2, 20%) @gridunit solid;
+  border-left: fade(@color-text, 20%) @gridunit solid;
   margin-left: (@gridunit * 2) - @gridunit;
 }
 
@@ -229,7 +237,7 @@ figure {
     margin: 0 auto;
     width: -moz-fit-content;
     width: fit-content;
-    background-color: fade(@color-1, 20%);
+    background-color: fade(@color-primary, 20%);
     padding: @gridunit * .25;
   }
 }
@@ -239,7 +247,7 @@ a .card {
   background-color: @color-card;
   padding: @gridunit;
   margin-bottom: @gridunit * 3;
-  border-left: @gridunit solid @color-1;
+  border-left: @gridunit solid @color-primary;
 
   h3 {
     margin-top: @gridunit;
@@ -252,11 +260,11 @@ a:last-child .card {
 }
 
 a:hover .card {
-  background-color: fade(@color-1, 40%);
+  background-color: fade(@color-primary, 40%);
 }
 
 a:active .card {
-  background-color: @color-1;
+  background-color: @color-primary;
 }
 
 // button
@@ -266,7 +274,7 @@ a.button {
   padding: @gridunit;
   max-width: @gridunit * 30;
   margin: 0 auto;
-  border: @gridunit solid @color-1;
+  border: @gridunit solid @color-primary;
 
   h3 {
     margin-top: @gridunit;
@@ -276,11 +284,11 @@ a.button {
 }
 
 a:hover.button {
-  background-color: fade(@color-1, 40%);
+  background-color: fade(@color-primary, 40%);
 }
 
 a:active.button {
-  background-color: @color-1;
+  background-color: @color-primary;
 }
 
 // button icon
@@ -293,7 +301,7 @@ a:active.button {
 
 // fancy border
 #fancy-border-top, #fancy-border-right, #fancy-border-bottom, #fancy-border-left {
-  background-color: @color-1;
+  background-color: @color-primary;
   position: fixed;
 }
 
