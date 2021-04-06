@@ -142,6 +142,9 @@ section section {
 .callout {
   background-color: rgba(255, 208, 0, 0.4);
 }
+.callout.disclaimer {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .highlight {
   background-color: rgba(0, 255, 208, 0.4);
   padding: 0.125rem;
@@ -190,18 +193,21 @@ a:hover .card {
 a:active .card {
   background-color: #ffd000;
 }
+.button-setting {
+  width: fit-content;
+  width: -moz-fit-content;
+}
 a.button {
   background-color: #ffffff;
   display: flex;
   padding: 0 0.5rem;
-  max-width: 15rem;
   margin: 0 auto;
   border: 0.125rem solid #ffd000;
 }
 a.button h3 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem;
   width: 100%;
+  text-align: center;
 }
 a:hover.button {
   background-color: rgba(255, 208, 0, 0.4);

@@ -211,6 +211,10 @@ section {
   background-color: fade(@color-primary, 40%);
 }
 
+.callout.disclaimer {
+  background-color: fade(@color-text, 10%);
+}
+
 .highlight {
   background-color: fade(@color-accent, 40%);
   padding: @gridunit * .25;
@@ -273,18 +277,23 @@ a:active .card {
 }
 
 // button
+.button-setting {
+  // max-width: @gridunit * 20; // resume button
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
 a.button {
   background-color: @color-card;
   display: flex; // to align button icon
   padding: 0 @gridunit;
-  max-width: @gridunit * 30;
   margin: 0 auto;
   border: @gridunit * .25 solid @color-primary;
 
   h3 {
-    margin-top: @gridunit;
-    margin-bottom: @gridunit;
+    margin: @gridunit; // reset section styles
     width: 100%;
+    text-align: center;
   }
 }
 
