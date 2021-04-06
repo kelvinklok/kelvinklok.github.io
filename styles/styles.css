@@ -178,6 +178,9 @@ a .card h3 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+a .card figure {
+  background-color: #ebeae6;
+}
 a:last-child .card {
   margin-bottom: 0;
 }
@@ -302,6 +305,7 @@ body {
   }
   .card figure {
     flex-basis: 34%;
+    min-height: 8rem;
   }
 }
 @media screen and (min-width: 1200px) {
