@@ -193,10 +193,10 @@ a:active .card {
 a.button {
   background-color: #ffffff;
   display: flex;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   max-width: 15rem;
   margin: 0 auto;
-  border: 0.5rem solid #ffd000;
+  border: 0.125rem solid #ffd000;
 }
 a.button h3 {
   margin-top: 0.5rem;
@@ -301,10 +301,10 @@ body {
   }
   .card .card-title {
     margin-right: 1rem;
-    flex-basis: 66%;
+    flex-basis: 40%;
   }
   .card figure {
-    flex-basis: 34%;
+    flex-basis: 60%;
     min-height: 8rem;
   }
 }

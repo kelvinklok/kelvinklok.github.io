@@ -276,10 +276,10 @@ a:active .card {
 a.button {
   background-color: @color-card;
   display: flex; // to align button icon
-  padding: @gridunit;
+  padding: 0 @gridunit;
   max-width: @gridunit * 30;
   margin: 0 auto;
-  border: @gridunit solid @color-primary;
+  border: @gridunit * .25 solid @color-primary;
 
   h3 {
     margin-top: @gridunit;
@@ -403,11 +403,11 @@ body {
 
   .card .card-title {
     margin-right: @gridunit * 2;
-    flex-basis: 66%;
+    flex-basis: 40%;
   }
 
   .card figure {
-    flex-basis: 34%;
+    flex-basis: 60%;
     min-height: @gridunit * 16;
   }
 }
@@ -420,4 +420,4 @@ body {
       margin-left: -20%;
     }
   }
-}
+} 
