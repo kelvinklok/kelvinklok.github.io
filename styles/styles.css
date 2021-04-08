@@ -260,11 +260,11 @@ a:active.button {
 body {
   padding-top: 1.5rem;
 }
-.resume {
+#resume {
   max-width: 80rem;
   text-align: center;
 }
-.resume object {
+#resume object {
   height: 60vh;
 }
 @media screen and (min-width: 520px) and (min-height: 520px) {
