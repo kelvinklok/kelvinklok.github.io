@@ -314,6 +314,17 @@ body {
     flex-basis: 60%;
     min-height: 8rem;
   }
+  #project figure img {
+    cursor: zoom-in;
+    transition: all 500ms;
+  }
+  #project figure img.effect-zoom {
+    background-color: rgba(235, 234, 230, 0.8);
+    border: 4rem solid rgba(255, 208, 0, 0.8);
+    box-sizing: border-box;
+    cursor: zoom-out;
+    transform: scale(150%);
+  }
 }
 @media screen and (min-width: 1200px) {
   #project figure {

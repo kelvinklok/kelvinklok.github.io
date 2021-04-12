@@ -420,6 +420,20 @@ body {
     flex-basis: 60%;
     min-height: @gridunit * 16;
   }
+
+  // image zoom
+  #project figure img {
+    cursor: zoom-in;
+    transition: all 500ms;
+    
+    &.effect-zoom {
+      background-color: fade(@color-background, 80%);
+      border: (@gridunit * 8) solid fade(@color-primary, 80%);
+      box-sizing: border-box;
+      cursor: zoom-out;
+      transform: scale(150%);
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
