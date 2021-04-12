@@ -1,5 +1,7 @@
 // install image zoom effect
-window.onload = addEventToFigureImg();
+window.onload = function () {
+  addEventToFigureImg()
+};
 
 function addEventToFigureImg() {
   var htmlFigures = document.getElementsByTagName("img");
