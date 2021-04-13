@@ -421,18 +421,27 @@ body {
     min-height: @gridunit * 16;
   }
 
-  // image zoom
-  #project figure img {
+  // JS effect: image zoom
+  #project figure {
     cursor: zoom-in;
     transition: all 500ms;
     
     &.effect-zoom {
-      background-color: fade(@color-background, 80%);
-      border: (@gridunit * 8) solid fade(@color-primary, 80%);
-      box-sizing: border-box;
+      background-color: @color-background;
       cursor: zoom-out;
-      transform: scale(1.5);
+      box-sizing: border-box;
+      padding: @gridunit * 4;
+      transform: scale(1.4);
+      visibility: visible;
     }
+  }
+
+  
+  // JS effect: lightbox effect
+  html.not-a-modal-background {
+    background-color: fade(@color-text,90%);
+    overflow: hidden;
+    visibility: hidden;
   }
 }
 

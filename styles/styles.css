@@ -314,16 +314,22 @@ body {
     flex-basis: 60%;
     min-height: 8rem;
   }
-  #project figure img {
+  #project figure {
     cursor: zoom-in;
     transition: all 500ms;
   }
-  #project figure img.effect-zoom {
-    background-color: rgba(235, 234, 230, 0.8);
-    border: 4rem solid rgba(255, 208, 0, 0.8);
-    box-sizing: border-box;
+  #project figure.effect-zoom {
+    background-color: #ebeae6;
     cursor: zoom-out;
-    transform: scale(1.5);
+    box-sizing: border-box;
+    padding: 2rem;
+    transform: scale(1.4);
+    visibility: visible;
+  }
+  html.not-a-modal-background {
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    visibility: hidden;
   }
 }
 @media screen and (min-width: 1200px) {
