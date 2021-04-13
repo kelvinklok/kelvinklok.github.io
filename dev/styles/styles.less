@@ -164,18 +164,35 @@ body {
   .center();
 }
 
+header, footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 .menu {
-  .justify-right();
-  padding-left: 0; // Where does this come from?
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding-left: 0; // reset list margins
+
+  #logo {
+    flex: none;
+  }
+
+  li {
+    display: inline-block;
+    line-height: 2rem;
+    margin-left: @gridunit * 2;
+    
+    &:first-child {
+      margin-left: inherit;
+    }
+  }
 }
 
-.menu li {
-  display: inline-block;
-  line-height: 2rem;
-}
-
-.menu a {
-  margin-left: @gridunit * 2;
+footer {
+    flex-direction: row-reverse;
 }
 
 section {
@@ -435,7 +452,6 @@ body {
       visibility: visible;
     }
   }
-
   
   // JS effect: lightbox effect
   html.not-a-modal-background {

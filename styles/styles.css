@@ -105,17 +105,31 @@ footer {
 body {
   margin: 0 auto;
 }
+header,
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 .menu {
-  float: right;
-  text-align: right;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   padding-left: 0;
+}
+.menu #logo {
+  flex: none;
 }
 .menu li {
   display: inline-block;
   line-height: 2rem;
-}
-.menu a {
   margin-left: 1rem;
+}
+.menu li:first-child {
+  margin-left: inherit;
+}
+footer {
+  flex-direction: row-reverse;
 }
 section {
   margin: 0 auto;
