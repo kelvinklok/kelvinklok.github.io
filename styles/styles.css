@@ -98,7 +98,6 @@ html {
 }
 body,
 header,
-section,
 footer {
   padding: 0.5rem;
 }
@@ -110,6 +109,21 @@ footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+footer {
+  flex-direction: row-reverse;
+}
+section {
+  margin: 0 auto;
+}
+section :first-child {
+  margin-top: 0;
+}
+section :last-child {
+  margin-bottom: 0;
+}
+section section {
+  margin: 0.5rem;
 }
 .menu {
   display: flex;
@@ -127,22 +141,6 @@ footer {
 }
 .menu li:first-child {
   margin-left: inherit;
-}
-footer {
-  flex-direction: row-reverse;
-}
-section {
-  margin: 0 auto;
-  padding: 0.5rem;
-}
-section :first-child {
-  margin-top: 0;
-}
-section :last-child {
-  margin-bottom: 0;
-}
-section section {
-  margin: 1rem;
 }
 #copyright {
   font-style: italic;
@@ -285,6 +283,7 @@ body {
   body {
     width: 80%;
     max-width: 100rem;
+    padding: 2.5rem;
   }
   body header,
   body section,
@@ -306,9 +305,6 @@ body {
   #fancy-border-top,
   #fancy-border-bottom {
     height: 1.5rem;
-  }
-  body {
-    padding: 2.5rem;
   }
 }
 @media screen and (min-width: 600px) {

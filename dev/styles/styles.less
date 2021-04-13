@@ -156,7 +156,7 @@ html {
   background-color: @color-background;
 }
 
-body, header, section, footer {
+body, header, footer {
   padding: @gridunit * 1;
 }
 
@@ -168,6 +168,26 @@ header, footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+footer {
+  flex-direction: row-reverse;
+}
+
+section {
+  .center();
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  section {
+    margin: @gridunit * 1;
+  }
 }
 
 .menu {
@@ -188,27 +208,6 @@ header, footer {
     &:first-child {
       margin-left: inherit;
     }
-  }
-}
-
-footer {
-    flex-direction: row-reverse;
-}
-
-section {
-  .center();
-  padding: @gridunit;
-
-  :first-child {
-    margin-top: 0;
-  }
-
-  :last-child {
-    margin-bottom: 0;
-  }
-
-  section {
-    margin: @gridunit * 2;
   }
 }
 
@@ -390,9 +389,12 @@ body {
   body {
     width: 80%;
     max-width: @gridunit * 200;
+    padding: @fancyborderwidth + @gridunit * 2;
+    
     header, section, footer {
       padding: @gridunit * 2;
     }
+
   }
 
   section {
@@ -409,10 +411,6 @@ body {
   
   #fancy-border-top, #fancy-border-bottom {
     height: @fancyborderwidth;
-  }
-
-  body {
-    padding: @fancyborderwidth + @gridunit * 2;
   }
 }
 
