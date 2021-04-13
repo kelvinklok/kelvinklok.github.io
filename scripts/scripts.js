@@ -5,8 +5,8 @@ window.onload = function () {
 
 // lightbox
 function addEventToFigureImg() {
-  // add event to all elements
-  var htmlFigures = document.getElementsByTagName("figure");
+  // add event to all #project figure elements
+  var htmlFigures = document.getElementById("project").getElementsByTagName("figure");
   
   for (var i = 0; i < htmlFigures.length; i++) {
     htmlFigures[i].addEventListener("click", function() {
