@@ -382,6 +382,32 @@ body {
 }
 
 //////////////////////////////
+// effects
+//////////////////////////////
+
+// JS effect: image zoom
+#project figure {
+  cursor: zoom-in;
+  transition: all 500ms;
+  
+  &.effect-zoom {
+    background-color: @color-background;
+    cursor: zoom-out;
+    box-sizing: border-box;
+    padding: @gridunit;
+    transform: scale(1.1);
+    visibility: visible;
+  }
+}
+
+// JS effect: lightbox
+html.not-a-modal-background {
+  background-color: fade(@color-text,90%);
+  overflow: hidden;
+  visibility: hidden;
+}
+
+//////////////////////////////
 // Media Queries
 //////////////////////////////
 
@@ -437,25 +463,9 @@ body {
   }
 
   // JS effect: image zoom
-  #project figure {
-    cursor: zoom-in;
-    transition: all 500ms;
-    
-    &.effect-zoom {
-      background-color: @color-background;
-      cursor: zoom-out;
-      box-sizing: border-box;
-      padding: @gridunit * 4;
-      transform: scale(1.4);
-      visibility: visible;
-    }
-  }
-  
-  // JS effect: lightbox effect
-  html.not-a-modal-background {
-    background-color: fade(@color-text,90%);
-    overflow: hidden;
-    visibility: hidden;
+  #project figure.effect-zoom {
+    padding: @gridunit * 4;
+    transform: scale(1.4);
   }
 }
 

@@ -280,6 +280,23 @@ body {
 #resume object {
   height: 60vh;
 }
+#project figure {
+  cursor: zoom-in;
+  transition: all 500ms;
+}
+#project figure.effect-zoom {
+  background-color: #ebeae6;
+  cursor: zoom-out;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  transform: scale(1.1);
+  visibility: visible;
+}
+html.not-a-modal-background {
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  visibility: hidden;
+}
 @media screen and (min-width: 520px) and (min-height: 520px) {
   body {
     width: 80%;
@@ -325,22 +342,9 @@ body {
     flex-basis: 60%;
     min-height: 8rem;
   }
-  #project figure {
-    cursor: zoom-in;
-    transition: all 500ms;
-  }
   #project figure.effect-zoom {
-    background-color: #ebeae6;
-    cursor: zoom-out;
-    box-sizing: border-box;
     padding: 2rem;
     transform: scale(1.4);
-    visibility: visible;
-  }
-  html.not-a-modal-background {
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: hidden;
-    visibility: hidden;
   }
 }
 @media screen and (min-width: 1200px) {
