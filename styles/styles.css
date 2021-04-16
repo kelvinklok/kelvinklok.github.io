@@ -292,13 +292,10 @@ body {
   transform: scale(1.1);
   visibility: visible;
 }
-html.not-a-modal-background,
-html.not-a-modal-background body {
+html.not-a-modal-background {
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
-  position: relative;
   visibility: hidden;
-  height: 100%;
 }
 @media screen and (min-width: 520px) and (min-height: 520px) {
   body {
