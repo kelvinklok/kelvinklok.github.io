@@ -401,9 +401,10 @@ body {
 }
 
 // JS effect: lightbox
-html.not-a-modal-background {
+html.not-a-modal-background, html.not-a-modal-background body {
   background-color: fade(@color-text,90%);
   overflow: hidden;
+  position: relative;
   visibility: hidden;
 }
 
