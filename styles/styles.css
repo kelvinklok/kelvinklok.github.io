@@ -298,6 +298,7 @@ html.not-a-modal-background body {
   overflow: hidden;
   position: relative;
   visibility: hidden;
+  height: 100%;
 }
 @media screen and (min-width: 520px) and (min-height: 520px) {
   body {
